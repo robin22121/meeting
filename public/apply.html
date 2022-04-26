@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <!-- 부트스트랩 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/css.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/562045c1f8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic&family=Single+Day&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- 네브바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">
+        <span class="ml-0" id="logo-font1" style="vertical-align: middle">
+          SOME<span style="color: black">day</span></span
+        >
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">썸데이소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="apply.html">미팅신청</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="board.html">게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">실시간상담</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- 위쪽 이미지 -->
+    <div class="logo-image mb-3" id="logo-height"></div>
+    <!-- 신청하기 -->
+
+    <container class="headline">
+      <h5 style="text-align: center" class="">모임 일정</h5>
+    </container>
+    <div class="container">
+      <div class="card mb-3">
+        <img
+          src="./image/social-distancing-4621687_1920 (1).jpg"
+          class="card-img-top apply-container"
+          alt="..."
+          style=""
+        />
+        <div class="card-body">
+          <h6 class="card-title">
+            <i class="fa fa-heart"></i> 썸데이 미팅 :5월 8일(일)
+            <i class="fa fa-heart"></i>
+          </h6>
+          <p class="card-text mb-0">
+            연령 : 남자 : 29~35세 / 여 : 29~36세 </br>
+            <small> - 참가비 : 남 45,000원 / 여 : 25,000원</small> 
+          </p>
+    
+          <p class="card-text mb-0">
+            일시 : 5월 8일(일) 3~6시 <br /><small class="">
+              - 1대1 로테이션 미팅 2시간 + 호프미팅 1시간++ 
+            </small>
+          </p>
+          <p class="card-text mb-0" text-muted>
+            장소 : 강남 <br /><small class="">
+              - 참가 확정자에게 별도 공지</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 신청하기 -->
+
+    <container class="headline">
+      <h5 style="text-align: center" class="mt-5">신청하기</h5>
+    </container>
+    <!-- 인풋창 -->
+    <div class="container input-container ">
+      <div class= "mb-2 "> 
+        <label class="radio-inline" style="display:block !important; float:left;  ">
+          <input type="radio" name="r_sex" id="sex1" value="남성" checked=""> 남자  &nbsp&nbsp&nbsp&nbsp&nbsp
+        </label>
+      </div>
+      <div class=  "mb-2 ms-3"> 
+        <label class="radio-inline" style="display:block !important;  float:left; ">
+          <input type="radio" name="r_sex" id="sex2" value="여성"> 여자
+        </label>
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">이름</span>
+        <input type="text" class="form-control name-input" placeholder="이름" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">나이</span>
+        <input type="text" class="form-control age-input" placeholder="나이" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group flex-nowrap mb-2">
+        <span class="input-group-text" id="addon-wrapping">전화번호</span>
+        <input type="text" class="form-control phone-input" placeholder="휴대폰번호" aria-label="Username" aria-describedby="addon-wrapping">
+      </div>
+      <div class="input-group mb-2"> 
+        <select name="r_job" id="r_job" required="" class="required form-control">
+          <option value="">직업선택</option>
+          <option value="대기업">대기업</option><option value="외국계">외국계</option><option value="공무원">공무원</option><option value="공기업">공기업</option><option value="은행/금융">은행/금융</option><option value="IT">IT</option><option value="서비스업">서비스업</option><option value="사무직/관리직">사무직/관리직</option><option value="엔지니어">엔지니어</option><option value="연구원">연구원</option><option value="전문직">전문직</option><option value="승무원">승무원</option><option value="교사/강사">교사/강사</option><option value="교직원">교직원</option><option value="직업군인">직업군인</option><option value="기타/일반">기타/일반</option><option value="간호사">간호사</option><option value="의료직">의료직</option><option value="미술/디자인">미술/디자인</option><option value="방송/예술/체육">방송/예술/체육</option><option value="자영업/CEO">자영업/CEO</option><option value="프리랜서">프리랜서</option>												</select>
+      </div>
+      <button type="submit" class="btn btn-primary border mb-5 submit-btn">제출하기</button>
+    </div>
+        <!-- 공지사항 -->
+
+ 
+      
+        <container class="headline">
+          <h5 style="text-align: center" class="mb-3">신청안내</h5>
+        </container>
+   
+        <div class="container ">
+          <div class="card mb-3">
+            <img
+            src="./image/커피.jpg"
+            class="card-img-top apply-container"
+            alt="..."
+            style=""
+          />
+            <div class="card-body ">
+       
+              <h6 class="card-title">
+                <i class="fa fa-heart"></i> 썸데이 미팅 :5월 8일(일)
+                <i class="fa fa-heart"></i>
+              </h6>
+              <p class="card-text mb-0">
+                연령 : 남자 : 29~35세 / 여 : 29~36세 </br>
+                <div class="about">ssss</div>
+                <div> - 참가비 : 남 45,000원 / 여 : 25,000원</div> 
+                <div> - 남녀 나이대를 고려 최대 8명으로 편성</div> 
+                <div> - '돌아온 싱글'의 경우 결혼 경력이 있거나, 무관한 분</div> 
+              </p>
+        
+              <p class="card-text mb-0">
+                일시 : 5월 8일(일) 3~6시 <br /><div class="">
+                  - 1대1 커피 미팅을 로테이션 미팅 2시간 + 호프미팅 1시간++ 
+                </div>
+              </p>
+              <p class="card-text mb-0" text-muted>
+                장소 : 강남 <br /><div class="">
+                  - 참가 확정자에게 별도 공지</
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <p>
+          <div>dddeddd</div>
+        </p>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCmA70KH0KFb1z7bIhRhP6JZQLA4xRfm1k",
+        authDomain: "meeting-41c6e.firebaseapp.com",
+        projectId: "meeting-41c6e",
+        storageBucket: "meeting-41c6e.appspot.com",
+        messagingSenderId: "30726035083",
+        appId: "1:30726035083:web:8a93549a7d99b8147c668e",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+    </script>
+    <script src="./js/main.js"></script>
+    <!-- 서버통신 -->
+  </body>
+</html>

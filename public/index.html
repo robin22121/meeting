@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+
+    <!-- 부트스트랩 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./css/css.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    <script
+      src="https://kit.fontawesome.com/562045c1f8.js"
+      crossorigin="anonymous"
+    ></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nanum+Gothic&family=Single+Day&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+     <!-- 네브바 -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html"/>
+    
+        <span class="ml-0" id="logo-font1" style="vertical-align: middle">
+          SOME<span style="color: black">day</span></span
+        >
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.html">썸데이소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="apply.html">미팅신청</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="board.html">게시판</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">실시간상담</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="carousel-container">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <!-- <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleCaptions"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active dark slide1">
+            <!-- <img
+              src="./image/people-2561053_1920.jpeg"
+              class="d-block w-100 dark"
+              alt="..."
+            /> -->
+            <div class="carousel-caption text-middle">
+              <h3>썸타고 싶은 날..</h3>
+              <h6>썸데이 스피드미팅에서 <br>특별한 인연을 찾으세요</h6>
+            </div>
+          </div>
+          <div class="carousel-item dark slide2">
+            <div class="carousel-caption">
+              <h3>썸데이 스피드 미팅</h3>
+              <h6>일대일 미팅으로 충실하게<br />로테이션식으로 많이 만나는 </h6>
+            </div>
+          </div>
+          <div class="carousel-item dark slide3">
+            <div class="carousel-caption">
+              <h3>커피와 호프를 함께</h3>
+              <h6>1대1 미팅이 끝난 후<br />뒤풀이 미팅 진행 
+              </h6>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-target="#carouselExampleCaptions"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-target="#carouselExampleCaptions"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </button>
+      </div>
+    </div>
+  
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+          <div class="container px-4 px-lg-5 text-center">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+              <div class="col-lg-10 m-2">
+                <h2 class="mb-3 mt-2">
+             1대1과 다대다의 장점만을 모아<br>
+             커피와 호프를 함께
+                </h2>
+                <p class=" mb-2">
+          7명의 이성을 동시에 만납니다.  <br>
+          커피 미팅에서는 1:1 로테이션 형식으로<br>
+           각각 15~20분간 미팅 후 커플 매칭을 진행하며,<br>
+    
+           <p class="">
+                      뒤풀이 겸 호프 미팅에서는 맥주와 함께<br>
+                    자유로운 분위기에서 커플 매칭을 진행합니다.  </p>
+                         
+          
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <div class="container">
+          <div class="card mb-3">
+            <img src="./image/social-distancing-4621687_1920 (1).jpg" class="card-img-top" alt="..." style = "">
+            <div class="card-body">
+              <h6 class="card-title"> <i class="fa fa-heart"></i> 남 29~35, 여 29~35/썸데이:5월 8일(일)  <i class="fa fa-heart"></i> </h6>
+             
+              <p class="card-text mb-2 ">장소 : 강남 <br><small class="text-muted"> - 참가 확정자에게 별도 공지</small> </p>
+              <p class="card-text ">시간 : 3~6시 <br><small class="text-muted"> - 2시간 1대1 로테이션 미팅 후 1시간+ 호프미팅 </small> </p>
+             
+              <p class="card-text" style="text-align:center"><small class="text-muted">남 16 명, 여 13명 신청중</small></p>
+              <a href="apply.html" class="btn btn-primary border">신청하기</a>
+            </div>
+          </div>
+        </div>
+  
+<div class="dss ass dsa">assssss</div>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyCmA70KH0KFb1z7bIhRhP6JZQLA4xRfm1k",
+        authDomain: "meeting-41c6e.firebaseapp.com",
+        projectId: "meeting-41c6e",
+        storageBucket: "meeting-41c6e.appspot.com",
+        messagingSenderId: "30726035083",
+        appId: "1:30726035083:web:8a93549a7d99b8147c668e",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    
+    </script>
+    <script src="./js/main.js"></script>
+    <script src=""></script>
+    <!-- 서버통신 -->
+  </body>
+</html>

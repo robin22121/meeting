@@ -1,0 +1,122 @@
+/* font-family: 'Bebas Neue', cursive; 영어 로고
+font-family: 'Nanum Gothic', sans-serif 일반 한글;
+font-family: 'Single Day', cursive; 이쁜 한글*/
+html {
+  line-height: 1.15; /*기본 행간 높이*/
+}
+body {
+  margin: 0px;
+
+  font-size: 1rem;
+}
+.div,
+p,
+input,
+textarea {
+  box-sizing: border-box;
+}
+.head-title {
+  font-size: 1rem;
+  padding: 3px;
+
+  font-weight: 700;
+}
+h1,
+h4 {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.nav-link,
+.navbar,
+.navbar-brand {
+  font-size: 1rem;
+}
+.logo-title {
+  margin-top: 100px;
+}
+#logo-font1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 0px;
+  padding: 3px;
+  margin-top: 20px;
+  margin-bottom: -15px;
+  color: #d88c9a;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 700;
+  color: black;
+  margin-right: 15px;
+}
+.logo-container span {
+  color: BLACK;
+  padding: 3px;
+}
+
+.dark {
+  background-color: #0005;
+  background-blend-mode: darken;
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  padding-top: calc(400 / 1000 * 100%);
+}
+.carousel-caption {
+  bottom: 10px;
+}
+.carousel-container {
+  margin-top: 0px;
+}
+.slide1 {
+  background-image: url("../image/couple-3581038_1920.jpg");
+}
+
+.slide2 {
+  background-image: url("http://placeimg.com/1000/400/any");
+}
+.slide3 {
+  background-image: url("http://placeimg.com/800/400/any");
+}
+.logo-image {
+  background-image: url("../image/couple-3581038_1920.jpg");
+}
+.card-title {
+  color: #d88c9a;
+  text-align: center;
+}
+#logo-height {
+  background-color: #0005;
+  background-blend-mode: darken;
+
+  width: 100%;
+  height: 80px;
+}
+.btn .btn-primary .border {
+  background-color: white;
+  color: black;
+}
+.btn.btn-primary.border {
+  background-color: #d88c9a;
+  color: white;
+}
+.apply-container {
+  border-top: 2px solid #d88c9a;
+}
+.photo-apply {
+  width: 100%;
+}
+p.card-text {
+  font-size: 14px;
+  color: gray;
+}
+
+span.input-group-text,
+input.form-control,
+select.form-control,
+.btn.btn-primary.border {
+  font-size: 14px;
+}
+.about {
+  font-size: 0.875rem;
+}

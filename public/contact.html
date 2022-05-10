@@ -28,12 +28,12 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/css.css" />
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css" />
     <script
       src="https://kit.fontawesome.com/562045c1f8.js"
       crossorigin="anonymous"
     ></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,10 +42,9 @@
     />
   </head>
   <body>
-     <!-- 네브바 -->
+    <!-- 네브바 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html"/>
-    
+      <a class="navbar-brand" href="index.html">
         <span class="ml-0" id="logo-font1" style="vertical-align: middle">
           SOME<span style="color: black">day</span></span
         >
@@ -62,15 +61,12 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">썸데이소개</a>
-          </li>
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="apply.html">미팅신청</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="board.html">게시판</a>
+            <a class="nav-link" href="board.html">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">실시간상담</a>
@@ -78,33 +74,55 @@
         </ul>
       </div>
     </nav>
-<div class="container">
-<div>날짜</div>
-<div class="name-input">
-  <input type="text" id="date-input"  />
-</div>
-<div></div>
-<div class="name-input">
-  <select id="man-age">
-    <option value="남 29~35 여 29~35">남 29~35 여 29~35</option>
-    <option value="남 34~39 여 32~37">남 34~39 여 32~37</option>
-    <option value="남 37~42 여 35~40">남 37~42 여 35~40</option>
-    <option value="남 40~45 여 37~45">남 40~45 여 37~45</option>
-    <option value="돌아온 싱글(남여 30~38)">돌아온 싱글(남여 30~38)</option>
-    <option value="돌아온 싱글(남여 36~45)">돌아온 싱글(남여 36~45)</option>
-</select>
-</div>
+    <!-- 위쪽 이미지 -->
+    <div class="logo-image mb-3" id="logo-height"></div>
 
-<button type="submit" class="btn btn-primary register-btn">등록</button>
-</div> 
+    <h3 class="mb-3" style="text-align: center; margin-top: 100px">
+      실시간 문의
+    </h3>
 
-<div class="dss ass dsa">assssss</div>
+    <div
+      class="card mx-auto mb-3"
+      style="width: 18rem; border: 1px solid white"
+    >
+      <img
+        src="./image/카카오톡.png"
+        class="card-img-top mx-auto mt-3"
+        alt="..."
+        style="width: 20%"
+      />
+      <div class="card-body">
+        <h5 class="card-title" style="color: black">카톡 실시간 상담</h5>
+        <p class="card-text">
+          카톡 아이디 robin1q84로 문의주시면 24시간 언제든 확인 후 연락드립니다.
+        </p>
+      </div>
+    </div>
+    <!-- 푸터 -->
+    <footer
+      class="container"
+      style="height: 200px; position: relative; bottom: 0; right: 0"
+    >
+      <div class="logo">
+        <a class="navbar-brand" href="index.html">
+          <span class="ml-0" id="logo-font1" style="vertical-align: middle">
+            SOME<span style="color: black">day</span></span
+          >
+        </a>
+      </div>
+      <div class="mb-2" style="font-size: 13px">
+        상호 : 주식회사 호미 &nbsp; 대표: 김태호 &nbsp; 사업자번호 :
+        279-81-02355 &nbsp; <br />
+        주소 : 서울 중구 한강대로 416, 13F <br />
+        연락처 : 010-3540-5642 &nbsp; 이메일 : 010-3640-5642
+      </div>
+      <div class="text-muted" style="font-size: 12px">
+        COPYRIGHT(c) 2022 ALL RIGHT RESERVED. <br />
+        Homi Inc.
+      </div>
+    </footer>
 
-    <!-- 서버통신 -->
-  </body>
-
-  <script>
-
+    <script>
       var firebaseConfig = {
         apiKey: "AIzaSyCmA70KH0KFb1z7bIhRhP6JZQLA4xRfm1k",
         authDomain: "meeting-41c6e.firebaseapp.com",
@@ -116,29 +134,8 @@
 
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
-
     </script>
-
-<script>
-
-$('.register-btn').click(function(){
-  var man = $("#man-age").find(":selected").val();
-  var theday= $('#date-input').val();
-  var today = new Date();
-  var eventdata = {
-    나이 : man,
-    일자 : theday,
-    등록일 : today,
-  }
-  console.log(man, theday, today)
-
-  db.collection('eventday').add(eventdata)
-
-})
-</script>
-
-
-
-
-  </script>
+    <script src="./js/main.js"></script>
+    <!-- 서버통신 -->
+  </body>
 </html>

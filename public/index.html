@@ -147,11 +147,11 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-lg-10 m-2">
                 <h2 class="mb-3 mt-2">
-             1대1과 다대다의 장점만을 모아<br>
+             
              커피와 호프를 함께
                 </h2>
                 <p class=" mb-2">
-          7명의 이성을 동시에 만납니다.  <br>
+          8명의 이성을 동시에 만납니다.  <br>
           커피 미팅에서는 1:1 로테이션 형식으로<br>
            각각 15~20분간 미팅 후 커플 매칭을 진행하며,<br>
     
@@ -164,23 +164,32 @@
             </div>
           </div>
         </section>
-    
-        <div class="container">
-          <div class="card mb-3">
-            <img src="./image/social-distancing-4621687_1920 (1).jpg" class="card-img-top" alt="..." style = "">
-            <div class="card-body">
-              <h6 class="card-title"> <i class="fa fa-heart"></i> 남 29~35, 여 29~35/썸데이:5월 8일(일)  <i class="fa fa-heart"></i> </h6>
-             
-              <p class="card-text mb-2 ">장소 : 강남 <br><small class="text-muted"> - 참가 확정자에게 별도 공지</small> </p>
-              <p class="card-text ">시간 : 3~6시 <br><small class="text-muted"> - 2시간 1대1 로테이션 미팅 후 1시간+ 호프미팅 </small> </p>
-             
-              <p class="card-text" style="text-align:center"><small class="text-muted">남 16 명, 여 13명 신청중</small></p>
-              <a href="apply.html" class="btn btn-primary border">신청하기</a>
-            </div>
-          </div>
+    <!-- 데이터테이블 -->
+        <div class="container container-card mb-5 mt-3">
+
         </div>
-  
-<div class="dss ass dsa">assssss</div>
+  <!-- 푸터 -->
+  <footer
+  class="container"
+  style="height: 200px; position: relative; bottom: 0; right: 0"
+>
+  <div class="logo">
+    <a class="navbar-brand" href="index.html">
+      <span class="ml-0" id="logo-font1" style="vertical-align: middle">
+        SOME<span style="color: black">day</span></span
+      >
+    </a>
+  </div>
+  <div class="mb-2" style="font-size: 13px ;">
+    상호 : 주식회사 호미 &nbsp; 대표: 김태호  &nbsp; 사업자번호 : 279-81-02355  &nbsp; <br> 주소 : 서울
+    중구 한강대로 416, 13F <br />
+    연락처 : 010-3540-5642  &nbsp; 이메일 : 010-3640-5642
+  </div>
+  <div class="text-muted" style="font-size: 12px">
+    COPYRIGHT(c) 2022 ALL RIGHT RESERVED. <br />
+    Homi Inc.
+  </div>
+</footer>
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyCmA70KH0KFb1z7bIhRhP6JZQLA4xRfm1k",
@@ -193,10 +202,29 @@
 
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
-    
+ console.log('dd')   
     </script>
-    <script src="./js/main.js"></script>
-    <script src=""></script>
+ 
+    <script >
+    
+      db.collection('eventday').orderBy('등록일', 'desc').get().then((result) => {
+        result.forEach((doc)=>{
+       
+       var template =`<div class="card mb-3 " >
+            <img src="./image/social-distancing-4621687_1920 (1).jpg" class="card-img-top" alt="..." style = "">
+            <div class="card-body">    
+              <h6 class="card-title"> <i class="fa fa-heart"></i> ${doc.data().나이} ${doc.data().일자}<i class="fa fa-heart"></i> </h6>
+              <p class="card-text ">장소 : 강남 <br><small class="font-small text-muted"> - 참가 확정자에게 별도 공지</small> </p>
+              <p class="card-text ">시간 : 3~6시 <br><small class="font-small text-muted"> - 2시간 1대1 로테이션 미팅 후 1시간+ 호프미팅 </small> </p>
+              <a href="apply.html?id=${doc.id} "><button type="text" class="btn btn-primary border ">신청하기</button> </a>
+              </div>
+          </div>
+       `
+       $('.container-card').append(template);
+        })
+      })
+    </script>
     <!-- 서버통신 -->
+ 
   </body>
 </html>

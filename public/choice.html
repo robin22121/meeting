@@ -79,19 +79,37 @@
       </div>
     </nav>
 <div class="container">
-<div>날짜</div>
-<div class="name-input">
-  <input type="text" id="date-input"  />
-</div>
+
 <div></div>
+<div class="name-input mb-3">
+  참가자<select id="selector">
+    <option value="남1">남1</option>
+    <option value="남2">남2</option>
+    <option value="남3">남3</option>
+    <option value="남4">남4</option>
+    <option value="남5">남5</option>
+    <option value="남6">남6</option>
+    <option value="여1">여1</option>
+    <option value="여2">여2</option>
+    <option value="여3">여3</option>
+    <option value="여4">여4</option>
+    <option value="여5">여5</option>
+   
+</select>
+</div>
 <div class="name-input">
-  <select id="man-age">
-    <option value="남 29~35 여 29~35">남 29~35 여 29~35</option>
-    <option value="남 34~39 여 32~37">남 34~39 여 32~37</option>
-    <option value="남 37~42 여 35~40">남 37~42 여 35~40</option>
-    <option value="남 40~45 여 37~45">남 40~45 여 37~45</option>
-    <option value="돌아온 싱글(남여 30~38)">돌아온 싱글(남여 30~38)</option>
-    <option value="돌아온 싱글(남여 36~45)">돌아온 싱글(남여 36~45)</option>
+  선택<select id="choice">
+    <option value="남1">남1</option>
+    <option value="남2">남2</option>
+    <option value="남3">남3</option>
+    <option value="남4">남4</option>
+    <option value="남5">남5</option>
+    <option value="남6">남6</option>
+    <option value="여1">여1</option>
+    <option value="여2">여2</option>
+    <option value="여3">여3</option>
+    <option value="여4">여4</option>
+    <option value="여5">여5</option>
 </select>
 </div>
 
@@ -120,38 +138,62 @@
     </script>
 
 <script>
-var num=0;
+
 $('.register-btn').click(function(){
-  var man = $("#man-age").find(":selected").val();
-  var theday= $('#date-input').val();
+  var person = $("#selector").find(":selected").val();
+  var choice = $("#choice").find(":selected").val();
+
   var today = new Date();
   var eventdata = {
-    나이 : man,
-    일자 : theday,
-    등록일 : today,
+     from : person,
+     to : choice,
+     등록일 : today,
   }
-  console.log(man, theday, today)
+console.log(eventdata)
+  db.collection('choice').add(eventdata)
 
-  db.collection('eventday').add(eventdata)
 })
-
-db.collection('eventday').orderBy('등록일', 'desc').get().then((result) => {
-  console.log(  typeof(result))
-
-result.forEach((doc) => {
-    console.log(doc.data().나이)
-  num = num+1
-  console.log(num)
-})
-      })
-
-
 </script>
-
 <script>
+var manlist = ['m1', 'm2', 'm3', 'm4', 'm5']
+var womanlist = ['f1', 'f2', 'f3', 'f4', 'f5']
+console.log(manlist)
+
+var manchoice =[{'m1' : "f1"}, {m2 : "f3"}, {m3 : 'f2'}, {m4 : 'f3'}, {m5 : 'f2'},]
+var womanchoice =[ {'f1' : 'm1'}, {f2 : 'm5'}, {f3: 'm2'}, {f4 :'m4'}, {f5 : 'm5' }]
+
+var manchoice2 =[{'m1' : "f4"}, {m2 : "f3"}, {m3 : 'f2'}, {m4 : 'f2'}, {m5 : 'f2'},]
+var womanchoice2 =[ {'f1' : 'm1'}, {f2 : 'm4'}, {f3: 'm6'}, {f4 :'m1'}, {f5 : 'm5' }]
+var manchoice3 =[{'m1' : "f5"}, {m2 : "f3"}, {m3 : 'f2'}, {m4 : 'f3'}, {m5 : 'f2'},]
+var womanchoice3 =[ {'f1' : 'm1'}, {f2 : 'm5'}, {f3: 'm6'}, {f4 :'m4'}, {f5 : 'm1' }]
+
+console.log(typeof(Object.values(manchoice[0])))
+console.log(typeof(Object.keys(womanchoice[0])))
 
 
-</script>
+if(Object.keys(womanchoice[0]).toString() ==Object.values(manchoice[0]).toString()){
+  
+  console.log('맞다')
+} else{
+  console.log('틀리다')
+}
+
+for(var j=0; j<womanlist.length; j++){
+  for(var i = 0; i< manlist.length; i++){
+    if(Object.keys(womanchoice[j]).toString() ==Object.values(manchoice[i]).toString() && Object.values(womanchoice[j]).toString() ==Object.keys(manchoice[i]).toString()){
+     console.log('일지망',manlist[i], womanlist[j]) 
+    }
+    if(Object.keys(womanchoice2[j]).toString() ==Object.values(manchoice2[i]).toString() && Object.values(womanchoice2[j]).toString() ==Object.keys(manchoice2[i]).toString()){
+     console.log('이지망',manlist[i], womanlist[j]) 
+    }
+    if(Object.keys(womanchoice3[j]).toString() ==Object.values(manchoice3[i]).toString() && Object.values(womanchoice3[j]).toString() ==Object.keys(manchoice3[i]).toString()){
+     console.log('3지망',manlist[i], womanlist[j]) 
+    }
+   
+ }
+
+}
 
 
+  </script>
 </html>

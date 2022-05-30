@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="naver-site-verification" content="d16a3b5c7bc237e850a3426d9ac2314a1fc2b7e7" />
+
+    <title>썸데이 미팅</title>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -28,7 +30,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/css.css" />
-    <link rel="stylesheet" href="./css/styles.css">
+  
     <script
       src="https://kit.fontawesome.com/562045c1f8.js"
       crossorigin="anonymous"
@@ -81,7 +83,7 @@
 <div class="container">
 <div>날짜</div>
 <div class="name-input">
-  <input type="text" id="date-input"  />
+  <input type="date" id="date-input"  />
 </div>
 <div></div>
 <div class="name-input">
@@ -121,6 +123,12 @@
 
 <script>
 var num=0;
+// var inputVal;
+// $('#date-input').onchange = (e) => {
+//   console.log(e.target.value)
+//   inputVal = e.target.value
+//   console.log(inputval)
+// }
 $('.register-btn').click(function(){
   var man = $("#man-age").find(":selected").val();
   var theday= $('#date-input').val();

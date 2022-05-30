@@ -9,8 +9,20 @@ $(document).ready(function () {
       phone: $(".phone-input").val(),
       // job: $("#r_job").find(":selected").text(),
     };
-
-    db.collection("register")
+    alert(
+      "성별:" +
+        apply.gender +
+        "\n이름:" +
+        apply.name +
+        "\n나이:" +
+        apply.age +
+        "\n전화번호:" +
+        apply.phone +
+        "으로 신청되었습니다.  \n참가비를 입금하시면 신청완료됩니다"
+    );
+    db.collection("eventday")
+      .doc(qs.get("id"))
+      .collection("user")
       .add(apply)
       .then((result) => {
         console.log("저장 성공");
@@ -46,15 +58,17 @@ db.collection("eventday")
    <p class="card-text mb-4">
     <h6>☆ 진행방식을 알려주세요</h6>
     <div class="mt-2 font-small text-muted">1:1 미팅 : 3시~5시까지 15~20분간 최대 8명의 이성과 1:1로테이션 미팅을 진행합니다.  미팅 종료후 1차 커플 매칭을 진행합니다.  마음에 드는 이성 2명을 단톡방 운영자에게  개인톡으로 알려주시면 커플 매칭 후 개별 안내해 드립니다. <br>(매칭결과는 호프미팅 종료 후 개별안내) </div>
-      <div class="mt-2 font-small text-muted" >호프미팅 (선택사항)  : 장소를 이동하여 90분간 자유로운 분위기에서 뒤풀이 겸 호프미팅을 진행합니다.맥주 1잔 기본제공, 안주와 술값은 1/n으로 계산합니다.   </div>
+      <div class="mt-2 font-small text-muted" >호프미팅 (선택사항)  : 장소를 이동하여 90분간 자유로운 분위기에서 뒤풀이 겸 호프미팅을 진행합니다.    </div>
       <div class="mt-2 font-small text-muted">   </div>
     </p>   
     <p class="card-text mb-4" >
       <h6 >☆ 참가비가 얼마인가요??</h6>
-      <div class="mt-2 font-small text-muted"> 참가비 : 남 45,000원 / 여 : 25,000원  </div>
+      <div class="mt-2 font-small " style =" text-decoration:line-through; color : #CC0A00"> 참가비 : 남 45,000원 / 여 : 25,000원  </div>
+      <div class="mt-2 font-small text-muted"> 서비스 론칭 기념 <span style="color : #CC0A00">6월 한달간 참가비 만원 이벤트를 진행합니다.  </span> (할인 조건) 보다 나은 서비스를 제공해 드리기 위한 간략한 설문은 미팅 전 1회, 미팅 후 1회 진행합니다.  꼭 작성 부탁드립니다.  </div>
+      <div class="mt-2 font-small text-muted"> 호프미팅의 경우  참가자에 한해 1/n으로 비용 부담 </div>
       <div class="mt-2 font-small text-muted"> 입금하실 곳<br>농협 351-1192-6906-23, 예금주: (주)호미  </div>
         <div class="mt-2 font-small text-muted" > 미팅 신청후 참가비를 입금하시면 모임이 열리는 주의 월요일 오전에 참가 확정 안내와 함께 카카오 단톡방으로 초대문자를 보내드립니다. 신청순으로 참가번호를 부여해드리니 단톡방 입장시 아이디를 참가번호로 하시면 됩니다.<br>     </div>
-        <div class="mt-2 font-small text-muted">    참가비에는 장소 대관료, 커피 1잔과 맥주 1잔 제공료가 포함됩니다. </div>
+        <div class="mt-2 font-small text-muted">     </div>
       </p>   
     <p class="card-text mb-4">
       <h6>☆ 어떤 복장을 입고 나가면 되죠??</h6>

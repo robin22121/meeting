@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="canonical" href="https://somedaymeeting.net/index.html">
+    <title>단 한번의 참석에 8명의 이성을 1:1로 만나는 스피드 미팅  </title>
+    <meta name="description" content="싱글남녀가 각 8명씩 모여 커피와 함께 15~20분간 1:1 로테이션으로 소개팅 데이트 후 3지망 매칭을 해드리는 서비스입니다. ">
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="스피드 데이트, 한번에 8명의 이성을 1:1 소개팅으로 만나요!">
+    <meta property="og:description" content="페이지 설명">
+    <meta property="og:image" content="../image/couple-3581038_1920.jpg"">
+    <meta property="og:url" content="https://somedaymeeting.net/">
+    <meta name="naver-site-verification" content="d16a3b5c7bc237e850a3426d9ac2314a1fc2b7e7" />
+
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
@@ -28,7 +37,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="./css/css.css" />
-    <link rel="stylesheet" href="./css/styles.css">
+   
     <script
       src="https://kit.fontawesome.com/562045c1f8.js"
       crossorigin="anonymous"
@@ -64,10 +73,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="apply.html">미팅신청</a>
+            <a class="nav-link" href="index.html">미팅신청</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="board.html">FAQ</a>
+            <a class="nav-link" href="faq.html">FAQ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">실시간상담</a>
@@ -99,13 +108,13 @@
             /> -->
             <div class="carousel-caption text-middle">
               <h3>썸타고 싶은 날..</h3>
-              <h6>썸데이 스피드미팅에서 <br>특별한 인연을 찾으세요</h6>
+              <h6>1:1 로테이션식으로  <br>최대 8명의 이성을 한 자리에서</h6>
             </div>
           </div>
           <div class="carousel-item dark slide2">
             <div class="carousel-caption">
               <h3>썸데이 스피드 미팅</h3>
-              <h6>일대일 미팅으로 충실하게<br />로테이션식으로 많이 만나는 </h6>
+              <h6>서비스 론칭 기념 6월 한달간 <br />커피값만 내시고 미팅 참여하세요!! </h6>
             </div>
           </div>
           <div class="carousel-item dark slide3">
@@ -145,7 +154,8 @@
               <div class="col-lg-10 m-2">
                 <h2 class="mb-3 mt-2">
              
-             커피와 호프를 함께
+             커피와 호프를 함께 하는<br>
+                  썸데이 미팅
                 </h2>
                 <p class=" mb-2">
           8명의 이성을 동시에 만납니다.  <br>
@@ -153,9 +163,11 @@
            각각 15~20분간 미팅 후 커플 매칭을 진행하며,<br>
     
            <p class="">
-                      뒤풀이 겸 호프 미팅에서는 맥주와 함께<br>
+                      뒤풀이 호프 미팅에서는 맥주와 함께<br>
                     자유로운 분위기에서 커플 매칭을 진행합니다.  </p>
-                         
+                    <p class="">
+                     서비스 론칭 기념<br>
+                     <span style="color : #CC0A00">6월 한달간 미팅 참여를 단 만원에 !!!</span>  </p>    
           
               </div>
             </div>
@@ -187,6 +199,7 @@
     Homi Inc.
   </div>
 </footer>
+<!-- 푸터 끝 -->
     <script>
       var firebaseConfig = {
         apiKey: "AIzaSyCmA70KH0KFb1z7bIhRhP6JZQLA4xRfm1k",
@@ -199,18 +212,18 @@
 
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
- console.log('dd')   
+
     </script>
  
     <script >
     
-      db.collection('eventday').orderBy('등록일', 'desc').get().then((result) => {
+      db.collection('eventday').orderBy('일자').get().then((result) => {
         result.forEach((doc)=>{
        
        var template =`<div class="card mb-3 " >
             <img src="./image/social-distancing-4621687_1920 (1).jpg" class="card-img-top" alt="..." style = "">
             <div class="card-body">    
-              <h6 class="card-title"> <i class="fa fa-heart"></i> ${doc.data().나이} ${doc.data().일자}<i class="fa fa-heart"></i> </h6>
+              <div class="card-title"> <i class="fa fa-heart"></i> ${doc.data().나이} ${doc.data().일자}<i class="fa fa-heart"></i> </div>
               <p class="card-text ">장소 : 강남 <br><small class="font-small text-muted"> - 참가 확정자에게 별도 공지</small> </p>
               <p class="card-text ">시간 : 3~6시 <br><small class="font-small text-muted"> - 2시간 1대1 로테이션 미팅 후 1시간+ 호프미팅 </small> </p>
               <a href="apply.html?id=${doc.id} "><button type="text" class="btn btn-primary border ">신청하기</button> </a>
